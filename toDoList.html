@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>To-Do List</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="toDoList.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>To Do List</h1>
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  		<div class="mdl-tabs__tab-bar">
+      <a href="#add-item" class="mdl-tabs__tab is-active">Add Item</a>
+      <a href="#todo" class="mdl-tabs__tab">To-Do Tasks</a>
+      <a href="#completed" class="mdl-tabs__tab">Completed</a>
+  </div>
+
+  <div class="mdl-tabs__panel is-active" id="add-item">
+  	<div class="mdl-textfield mdl-js-textfield">
+    <input placeholder="Enter the task here" class="mdl-textfield__input" type="text" id="new-task" autofocus>
+  	
+</div>
+
+	<button onclick="show()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  <i class="material-icons">add</i>
+</button>
+<p id="print"></p>
+  </div>
+  <div class="mdl-tabs__panel" id="todo">
+    <ul id="incomplete-tasks">
+    
+	</ul>
+  </div>
+  <div class="mdl-tabs__panel" id="completed">
+    <ul id="completed-tasks" class="mdl-list">
+    
+    </li>
+    </ul>
+  </div>
+</div>
+	</div>
+
+<script>
+
+function show() {
+var a  = document.getElementById("new-task").value
+if(a=="") {  alert("Task cannot be empty") }
+else {
+document.getElementById("print").innerHTML ="Task added Successfully";
+setTimeout(function(){
+           
+location.reload();
+       },1000);
+}
+}
+</script>
+
+
+	<script src="toDoList.js"></script>
+<br><br><br><br><br><br><br><br><br><br><br
+<center>  <p><b>Goorac</b> to do list</p>
+ <p>This page is not connected to any server or any back ends, We're not listening to you</b></p> </center>
+</body>	
+</html>

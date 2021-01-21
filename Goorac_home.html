@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Goorac</title>
+ <integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="background-color:white;">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+ 
+ position:absolute;  
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+ position: absolute;
+  top: px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto; 
+  max-width: 100%; 
+  margin: auto auto 0; 
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: silver;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: white;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+}
+</style>
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--INTERNET REDIRECT-->
+<script type='text/javascript'>
+       function Redirect() {
+           console.log("hello");
+            if (navigator.onLine) {
+            window.location = "MAIN.html";
+            }
+         else {
+  window.location = "nointernet.html";
+}
+}
+function resultPage1() {
+  var r = document.getElementById("here").value;
+if ( r == null || r == "" ) {
+    return false;
+}
+       sessionStorage.setItem("res",r);
+     return false;
+    window.location.href=("Result.html");
+} 
+</script>
+<style> 
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+#list img {
+  position: relative;
+  width: 27px;
+  height: 27px;
+border-radius:50%;
+margin-top : -38px;
+}
+
+#deleteImgs {
+  display: none;
+}
+input[type=text] {
+  width: 300px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('');  
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-top : 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 20%;
+}
+input[type=butto] {
+  width: 90% ;
+  box-sizing: border-box;
+
+ border-radius:50px;
+text-align: left;
+  font-size: 16px;
+  background-image: url('searchicon.jpg');  
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  border: 0;
+
+ }
+.button {
+  background-color: #ff;
+  border: none;
+  color: red;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 50px;}
+
+.home {
+  width: 100% ;
+  box-sizing: border-box;
+ position: relative ;
+  border: 1px solid #ccc;
+  border-top-right-radius: 25px;
+ border-top-left-radius: 25px;
+text-align: left !important;
+  font-size: 16px;
+  background-color: white;
+margin-top:30px;
+  border-bottom-right-radius: 25px;
+ border-bottom-left-radius: 25px;
+ 
+}
+</style>
+<script>
+function vib() {
+navigator.vibrate([450]);
+}
+</script>
+</head>
+<!----------------------------BODY------------------------------------>
+<body>
+<div style="background-color : #fff5f5">
+<input type="image" src="weather.jpg" style="margin-top:3px;">
+
+<input type="hidden" id="files">
+<input type="hidden" id="state">
+
+ <a href="Cookies2.html"> <div id="list" align="right" style="margin-right:8px;">
+</div> </a>
+</div>
+<a href="#" id="deleteImgs"></a>
+ <!-- Below is the script for voice recognition and conversion to text-->
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition() || window.SpeechRecognition ||
+        window.webkitSpeechRecognition ||
+        window.mozSpeechRecognition ||
+        window.msSpeechRecognition ||
+        window.oSpeechRecognition;
+            recognition.lang = "en-GB";
+ recognition.on= function() {
+               //  console.log(event);
+                document.getElementById('here').value = event.results[0][0].transcript;}
+            recognition.onresult= function() {
+               //  console.log(event);
+                document.getElementById('here').value = event.results[0][0].transcript;
+   document.getElementById('btnn').click();
+            }
+            recognition.start();
+        } 
+</script>
+<script src="userIcon.js"></script>
+<script>
+if (document.createElement("input").webkitSpeech === undefined) {
+	alert("Speech input is not supported in your browser.");
+}
+It�s unlikely you�ll require this since browsers which don�t
+</script>
+<!--Validateform-->
+<script src="validateForm.js"></script>
+<div class="container">
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <center>  <h4 class="modal-title" style="color : blue">Voice search</h4></center>
+        </div>
+        <div class="modal-body">
+         <h2 style="font-family:  Roboto" "font-size: 40px">Listening...</h2>
+<center><image src="circle-speech.gif" width="150" height="150"></image></center>
+<center><form name="myForm" id="myFormOnModal" action="Result.html"onsubmit="resultPage1();">
+<input type="text" name='q' autofocus placeholder=" Speak something" id="here" onKeyUp="check_val();">
+ <button id="btnn" class="button button1" onclick="check_val()"><b>Go</b></button>
+</form>
+<p style="color : Blue"> Ask, "Who is Bill Gates ?"</p></center>
+
+       </div>
+        <!--div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">back</button>
+        </div-->
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<center>
+<div style="background-color :#fff5f5">
+<img src="Grey.png" >  <br>
+
+<div class="home">
+<input type="butto" value="Search" onclick="Redirect()">
+
+<img border="0" alt=""   src="speech.png" width="" height="" onclick="PlaySound() ; record() ; vib()" data-toggle="modal" data-target="#myModal">
+</div>
+</div>
+</center>
+</div>
+<audio src= "alert.mp3" id="bflat"> </audio>
+<script>
+function PlaySound() {
+    bflat.play();
+}
+</script>
+<div class="navbar" style="margin-top: 5px;">
+  <a onclick="openNav()" class="active"><i class="fa fa-align-justify"></i>More</a>
+  <a href="Notes.html"><i class='fa fa-sticky-note-o'>Notes</i></a>
+<a href="toDoList.html" class="active"><i class="fa fa-list"></i>To-Do-List</a>
+</div>
+
+<center>
+<div style=" margin-top : -60px;">
+<center><embed type="text/html" src="https://www.bbc.com/" width="100%" height="900px">
+</div>
+</center>
+<div id="myNav" class="overlay">
+    <h4>Settings</h4>
+  <div class="overlay-content">
+<center><a style="color:white;font-size:20px;"><b>Settings</b></a></center>
+    <a href="#">402 Working on server crash</a>
+    <button class="btn btn-primary" onclick="closeNav()" style="float: right;">Go back</button>
+  </div>
+</div>
+
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  width: 100%;
+margin-left:5px;;
+  margin-top: 1px;
+}
+
+.overlay a {
+  padding: 8px;
+
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+margin-left: 2px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 2px;
+  right: 45px;
+  font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+</body>
+</html>

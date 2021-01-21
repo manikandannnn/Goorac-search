@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--INTERNET REDIRECT-->
+<script type='text/javascript'>
+       function Redirect() {
+           console.log("hello");
+            if (navigator.onLine) {
+            }
+         else {
+  window.location = "nointernet.html";
+}
+}
+
+     function resultPage() {
+var r =  localStorage.getItem("guname");
+if ( r == null || r == "" ) {
+     window.location = "cookies.html";
+}
+ else {
+ window.location = "Goorac_home.html";
+}
+}
+</script>
+</head>
+<body onload="Redirect() ; resultPage() ">
+<body>
+</html>

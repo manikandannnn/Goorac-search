@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html>
+<head>
+</head>
+<body>
+<div style="background-color: white">
+
+<center><p style="font-size : 20px;font-family:Didot">Mobile data is off</p></center>
+<a href="clumsy-bird-master/game.html"><input type="image"  src="gameLogo.jpg" align="left" HSPACE="45"width="84" height="84" ></a>
+<p style="color:black">No data connection.Consider<br> turnining on mobile data or turning<br> on WIFI</p>
+<input type="button" value="Try again" onClick="Redirect()">
+<!--INTERNET REDIRECT-->
+<script type='text/javascript'>
+       function Redirect() {
+           console.log("hello");
+            if (navigator.onLine) {
+            window.location = "MAIN.html";
+            }
+         else { 
+}
+}
+</script>
+</body>
+</html>

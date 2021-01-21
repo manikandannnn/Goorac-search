@@ -1,0 +1,78 @@
+<html>
+    <head>
+
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    function show(shown, hidden) {
+      document.getElementById(shown).style.display='block';
+      document.getElementById(hidden).style.display='none';
+      return false;
+    }
+    </script>
+<script>
+var i = 0;
+var txt = "Your VPN will be disabled and our server's VPN will be connected to your device.Your device's IP Address will be blocked temporarly for security.We're blocked some  illegal word from typing (Go to settings later to manage or disable). Our servers are blocking Third-party website to listening your action.";
+var speed = -100;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+<style>
+.button {
+  background-color:blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+  background-color:blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    </head>
+    <body onload="typeWriter()">
+    
+      <div id="Page1" style="margin-top:2px;">
+        <center><p style="font-family:Product Sans; font-size:45px"><b>Goorac</b></p>
+<h4 style="font-family:roboto;color:blue"><i>secure Sub-search engine</i></h4>
+       </center>
+ <div style="background-color:#5822b5;">
+<h3 style="color:white;font-family:Garamond"><b> Features </b></h3>
+<p style="font-size:15px ; font-family:Mrs Eaves. ;color:white" id="demo"></p>
+</div>
+
+<button class="button" style="float: right;"  onclick="return show('Page2','Page1');">Next</button>
+      </div>
+    
+      <div id="Page2" style="display:none">
+<div style="background-color:white;">
+<h3 style="color:blue;font-family:Garamond"><b> Differant between  Browser and Search engine </b></h3>
+<p style="font-size:15px ; font-family:Mrs Eaves. ;color:black">A search engine is a special kind of website that helps users find web pages from other websites. ... Let's make it clear: A browser is a piece of software that retrieves and displays web pages; a search engine is a website that helps people find web pages from other websites<br>In searching mode you are looking for a specific result, while in browsing mode you are looking for general ideas or multiple answers. In searching mode you are looking to complete a task, while in browsing mode you may be looking for inspiration, entertainment, or just more information.</p>
+</div>
+<button class="button" style="float: right;" onclick="window.location.href='Goorac_home.html'">Start</button>
+      </div>
+    
+    </body>
+    </html>

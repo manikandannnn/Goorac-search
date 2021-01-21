@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Goorac</title>
+<script>
+function clearInput() {
+var h = document.getElementById("text").value
+if ( h == null || h == "" ) {
+document.getElementById("pa").src = "Speech.png";
+document.getElementById("clear").src = "";
+
+}
+else {
+document.getElementById("pa").src= "whiteH.jpg";
+  document.getElementById("clear").src = "x.png";
+
+
+}
+
+}
+
+function back() {
+
+document.getElementById("pa").style.visibility = "visible";
+}
+
+     function resultPage() {
+var r = document.getElementById("text").value;
+if ( r == null || r == "" ) {
+    return false;
+}
+       sessionStorage.setItem("res",r);
+     return false;
+    window.location.href=("Result.html");
+}
+ function resultPage1() {
+  var r = document.getElementById("here").value;
+if ( r == null || r == "" ) {
+    return false;
+}
+       sessionStorage.setItem("res",r);
+     return false;
+    window.location.href=("Result.html");
+} 
+ 
+var a = sessionStorage.getItem("res").value;
+document.getElementById("text").value = a;
+</script>
+<div style="background-color:white;">
+
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--INTERNET REDIRECT-->
+<script type='text/javascript'>
+       function Redirect() {
+           console.log("hello");
+            if (navigator.onLine) {
+            }
+         else {
+  window.location = "nointernet.html";
+}
+}
+</script>
+<!--bad-->
+<script src="bad.js"></script>
+<script src="asd.js"></script>
+<style> 
+
+.home {
+  width: 100% ;
+  box-sizing: border-box;
+ position: relative ;
+  border: 1px solid #ccc;
+  border-top-right-radius: 25px;
+ border-top-left-radius: 25px;
+  background-color: white;
+  border-bottom-right-radius: 25px;
+ border-bottom-left-radius: 25px;
+ 
+}
+
+
+input[type=search] {
+  width: 90%;
+  box-sizing: border-box;
+  border: 0px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('bLogo.png');  
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  
+}
+input[type=text] {
+  width: 3oopx;
+  box-sizing: border-box;
+  border: 0.1px solid #ccc;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: #ff;
+  background-image: url('');  
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-top : 20px;
+ x-webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 85%;
+}
+.button {
+  background-color: #ff;
+  border: none;
+  color: red;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 50px;}
+</style>
+<script>
+function vib() {
+navigator.vibrate([550]);
+}
+</script>
+</head>
+<body onload="setInterval(function(){ Redirect();}, 5000); autoKey();" >
+ <!-- Below is the script for voice recognition and conversion to text-->
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            recognition.onresult = function() {
+                // console.log(event);
+                document.getElementById('here').value = event.results[0][0].transcript ;
+
+              document.getElementById('btnn').click();
+            }
+            recognition.start();
+        } 
+</script>
+<script>
+if (document.createElement("input").webkitSpeech === undefined) {
+	alert("Speech input is not supported in your browser.");
+}
+It�s unlikely you�ll require this since browsers which don�t
+</script>
+<!--validation form-->
+<script src="validateForm.js"></script>
+<div class="container">
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <center>  <h4 class="modal-title" style="color : blue">Voice search</h4></center>
+        </div>
+        <div class="modal-body">
+         <h2 style="font-family:  Roboto" "font-size: 40px">Listening...</h2>
+<center><image src="circle-speech.gif" width="150" height="150"></image></center>
+<center><form name="myForm2" id="myFormOnModal" action="Result.html"onsubmit="resultPage1();">
+<input type="text" name='q' autofocus placeholder=" Speak something" id="here" onKeyUp="check_val();">
+ <button id="btnn" class="button button1" onclick="check_val()"><b>Go</b></button>
+</form>
+<p style="color : Blue"> Ask, "Who is Bill Gates ?"</p></center>
+
+       </div>
+        <!--div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">back</button>
+        </div-->
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+<center><form name="myForm" action="Result.html" onsubmit="resultPage();">
+<div class="home">
+<input type="search"  id="text" name='q'  placeholder="search" onKeyUp="check_val();" onKeyDown="clearInput()" autocomplete="on">
+<img id="pa" border="0" alt="" src="speech.png" width="" height="" onclick="PlaySound() ; record() ; vib()" data-toggle="modal" data-target="#myModal">
+</div>
+<img  onclick="document.getElementById('text').value = '' ; clearInput()" id="clear" align="right" style="position:relative;margin-top:-33px;margin-right:1.5%">
+<p id="bad_notice"></p>
+</form></center>
+
+<audio src= "alert.mp3" id="bflat"> </audio>
+<script>
+function PlaySound() {
+    bflat.play();
+}
+</script>
+
+</body>
+</html>

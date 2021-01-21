@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Goorac</title>
+
+<link rel="icon" href="G.png" type="image/icon type">
+
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type='text/javascript'>
+       function Redirect() {
+           console.log("hello");
+            if (navigator.onLine) {
+window.location = "MAIN.html";
+            }
+         else {
+  window.location = "nointernet.html";
+}
+}
+
+function goBack() {
+  window.history.back();
+}
+</script>
+<style>
+input[type=image] {
+ 
+ position: relative;
+
+
+ }
+input[type=button] {
+  width: 100%;
+  box-sizing: border-box;
+ position: relative;
+  border: 0.1px solid #ccc;
+  border-radius: 50px;
+text-align: left !important;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');  
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-top : -10px;
+
+ }
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+#list img {
+  position: relative;
+  width: 27px;
+  height: 27px;
+border-radius:50%;
+margin-top : -99px;
+}
+
+#deleteImgs {
+  display: none;
+}
+</style>
+
+</head>
+<body onload="result1()">
+<center><input type="image" src="img.jpg" onclick="result1()" width="100%"></center>
+<p style="font-size:  32px; position: relative; margin-top: -80px;text-align: center;">Go<i>o</i>rac</p>
+
+<input type="hidden" id="files">
+<input type="hidden" id="state">
+
+ <a href="Cookies2.html"> <div id="list" align="right" style="margin-right:15px;">
+</div> </a>
+
+<a href="#" id="deleteImgs"></a>
+<script src="userIcon.js"></script>
+
+<center><input type="button" id="sbtn" value="search" placeholder="search"  onclick="goBack() " ></center>
+<div style=" margin-top : -99px;  position: relative;">
+<script>
+function result1() {
+var a = sessionStorage.getItem('res');
+  var x = document.createElement("EMBED");
+  x.setAttribute("src", "https://search.bing.com/search?q=" + a );
+  x.height = "1500px";
+x.width = "100%" ;
+  document.body.appendChild(x);
+document.getElementById("sbtn").value = a;
+}
+</script>
+</div>
+</body>
+</html>
